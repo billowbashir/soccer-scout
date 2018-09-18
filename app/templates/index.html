@@ -4,6 +4,11 @@
 {% block content%}
 <div>
   <h1 class="welcome">Welcome to soccer scout for all your soccer stats</h1>
+  {%for match in matches%}
+
+  <p>{{match.matches}}</p>
+
+  {%endfor%}
 </div>
 <style>
 .welcome{
