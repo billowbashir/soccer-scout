@@ -1,8 +1,8 @@
-{%extends 'base.html'%}
+{% extends 'base.html'%}
 
 
 {% block content%}
-<div style=" padding-top: 170px;" class="stands">
+<div style=" padding-top: 130px;" class="stands">
   <table class="table" >
   <tr >
     <th style="font-family: 'Kaushan Script', cursive; ">Pos</th>
@@ -14,7 +14,7 @@
     <th style="font-family: 'Kaushan Script', cursive; ">GD</th>
     <th style="font-family: 'Kaushan Script', cursive; ">points</th>
   </tr>
-  {%for match in matches%}
+  {% for match in matches%}
   <tr>
     <td>{{match.position}}</td>
     <td>{{match.matches}}</td>

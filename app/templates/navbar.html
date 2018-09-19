@@ -11,19 +11,21 @@
            </div>
            <div class="navbar-collapse collapse">
                <ul class="nav navbar-nav">
-                   <li><a style="color: gold; font-size: 20px;" class="nav-link" href="/">Home</a></li>
+                   
                </ul>
                   <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
-                    <li><a style="color: gold; font-size: 20px;" id="navlink" class="nav-link" href="{{url_for('main.fixtures')}}">Fixtures</a> </li>
-                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('main.standings')}}">Standings</a> </li><br>
-                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="/">Player stats</a> </li>
-                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('main.contact')}}">Contact us</a> </li>
-                    <li><a style="color: gold; font-size: 20px;" href="{{url_for('main.profile',uname=current_user.username)}}" class="nav-link">{{current_user.username}}</a></li>
+                    <li><a style="color: gold; font-size: 20px;" id="navlink" class="nav-link" href="{{url_for('main.fixtures')}}"> <button class="btn btn-outline-warning">Fixtures</button></a> </li>
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('main.standings')}}"> <button class="btn btn-outline-warning">Standings</button></a> </li><br>
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="/"> <button class="btn btn-outline-warning">Player stats</button></a> </li>
+                    
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('main.contact')}}"><button class="btn btn-outline-warning">Contact us</button> </a> </li>
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="/"> <button class="btn btn-outline-warning">More Sports</button></a> </li>
+                    <li><a style="color: gold; font-size: 20px;" href="{{url_for('main.profile',uname=current_user.username)}}" class="nav-link"> <button class="btn btn-outline-warning">{{current_user.username}}</button></a></li>
                   
-                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('auth.logout')}}">Sign out</a></li>
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('auth.logout')}}"><button class="btn btn-outline-warning">Sign out</button> </a></li>
                     {% else %}
-                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('auth.login')}}">Sign in</a></li>
+                    <li><a style="color: gold; font-size: 20px;" class="nav-link" href="{{url_for('auth.login')}}"> <button class="btn btn-outline-warning">Sign in</button></a></li>
 
 
                     {% endif%}

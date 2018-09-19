@@ -4,9 +4,10 @@ from flask import request
 
 from .models import EplStandings,FixtureList
 
+more_api = 'a31451fe2ecf450b99bd42722c24d555'
 apikey='565ec012251f932ea4000001fa542ae9d994470e73fdb314a8a56d76'
 baseurl='http://api.football-api.com/2.0/standings/1204?Authorization={}'
-
+moresportsapi = 'https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey={}'
 fixture_baseurl='http://api.football-api.com/2.0/matches?comp_id=1204&from_date=15.9.2018&to_date=24.9.2018&Authorization={}'
 
 # request for standings
@@ -74,3 +75,17 @@ def process_fixture_results(fixture_list):
         fixture_object = FixtureList(venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time,formatted_date,events)
         fixture_results.append(fixture_object)
     return fixture_results
+
+def get_moresports():
+    get_more_url = moresportsapi.format(more_api)
+    with urllib.request.urlopen(get_more_url) as url:
+        get_more_data = url.read()
+        get_more_response = json.loads(get_more_data)
+
+        more_results = None
+
+        if get_more_response:
+            more_results_list = get_more_response
+            more_results = process_results(more_results_list)
+
+    return more_results
