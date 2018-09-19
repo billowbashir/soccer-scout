@@ -69,6 +69,8 @@ def process_fixture_results(fixture_list):
         visitorteam_name=fixture_item.get('visitorteam_name')
         visitorteam_score=fixture_item.get('visitorteam_score')
         time=fixture_item.get('time')
-        fixture_object = FixtureList(venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time)
+        formatted_date = fixture_item.get('formatted_date')
+        events = fixture_item.get('events')
+        fixture_object = FixtureList(venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time,formatted_date,events)
         fixture_results.append(fixture_object)
     return fixture_results

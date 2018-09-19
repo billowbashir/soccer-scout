@@ -50,7 +50,7 @@ class FixtureList:
     EplStandings class to define the EplStandings Objects
     '''
 
-    def __init__(self,venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time):
+    def __init__(self, venue, status, localteam_name, localteam_score, visitorteam_name, visitorteam_score, time, formatted_date, events):
         self.venue=venue
         self.status=status
         self.localteam_name=localteam_name
@@ -58,3 +58,5 @@ class FixtureList:
         self.visitorteam_name=visitorteam_name
         self.visitorteam_score=visitorteam_score
         self.time=time
+        self.formatted_date = formatted_date
+        self.events = events
