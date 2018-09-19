@@ -31,7 +31,7 @@ class User(UserMixin,db.Model):
 
 class EplStandings:
     '''
-    articles class to define the article Objects
+    EplStandings class to define the EplStandings Objects
     '''
     def __init__(self,position,matches,team_name,wins,draws,losses,goaldifference,points):
         # self.id=id
@@ -43,3 +43,18 @@ class EplStandings:
         self.losses=losses
         self.goaldifference=goaldifference
         self.points=points
+
+
+class FixtureList:
+    '''
+    EplStandings class to define the EplStandings Objects
+    '''
+
+    def __init__(self,venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time):
+        self.venue=venue
+        self.status=status
+        self.localteam_name=localteam_name
+        self.localteam_score=localteam_score
+        self.visitorteam_name=visitorteam_name
+        self.visitorteam_score=visitorteam_score
+        self.time=time

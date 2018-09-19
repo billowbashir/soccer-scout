@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+
+
+{% block content%}
+<body class="body">
+<div>
+  {%for fixture in fixtures%}
+
+  <div class="jumbotron">
+    <h4>Venue: {{fixture.venue}}</h4>
+    <p>{{fixture.localteam_name}} VS {{fixture.visitorteam_name}}</p>
+    {%if fixture.status==""%}
+    <p>Time: {{fixture.time}}</p>
+
+  {%else%}
+    <p>Score:{{fixture.localteam_score}}:{{fixture.visitorteam_score}} Status:{{fixture.status}}</p>
+
+  {%endif%}
+  </div>
+  {%endfor%}
+</div>
+</body>
+<style>
+.jumbotron{
+  text-align: center;
+  color:red;
+  font-size: 20px;
+  background-color:transparent;
+  /* border-bottom-style: solid; */
+  border-top-style: solid;
+  border-color: red;
+
+
+}
+.body{
+  background-attachment: fixed;
+  background-image:url('http://getwallpapers.com/wallpaper/full/b/c/1/762330-top-premier-league-wallpapers-2560x1440-windows-7.jpg');
+}
+</style>
+{%endblock%}
