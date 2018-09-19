@@ -4,8 +4,10 @@ class Config:
     class config
     '''
     SECRET_KEY='1234'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://bashir:bashiir@localhost/soccer_scout'
-
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://zamzam:Ilovememore100@localhost/soccer_scout'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    UPLOADED_PHOTOS_DEST ='app/static/photos'
+    
 class ProdConfig(Config):
     '''
     Production  configuration child class
