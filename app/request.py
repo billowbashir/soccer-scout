@@ -2,14 +2,15 @@
 import urllib.request,json
 from flask import request
 
-from .models import EplStandings
+from .models import EplStandings,FixtureList
 
 apikey='565ec012251f932ea4000001fa542ae9d994470e73fdb314a8a56d76'
 baseurl='http://api.football-api.com/2.0/standings/1204?Authorization={}'
-# 'http://api.football-api.com/2.0/matches/{}?Authorization={}''
 
+fixture_baseurl='http://api.football-api.com/2.0/matches?comp_id=1204&from_date=15.9.2018&to_date=24.9.2018&Authorization={}'
+
+# request for standings
 def get_competitions():
-    # r=requests.get('https://api.football-data.org/v2/competitions/PL/matches?matchday=5',headers={ 'X-Auth-Token': '9b70f288df14443f994d4a1b89f3e4ac' } )
     get_standings_url = baseurl.format(apikey)
     with urllib.request.urlopen(get_standings_url) as url:
         get_standings_data = url.read()
@@ -39,3 +40,35 @@ def process_results(table_list):
         standing_object = EplStandings(position,team_name,matches,wins,draws,losses,goaldifference,points)
         standing_results.append(standing_object)
     return standing_results
+
+    # request for fixture
+def get_fixtures():
+    get_fixture_url = fixture_baseurl.format(apikey)
+    with urllib.request.urlopen(get_fixture_url) as url:
+        get_fixture_data = url.read()
+        get_fixture_response = json.loads(get_fixture_data)
+
+        fixtures_results = None
+
+        if get_fixture_response:
+            fixtures_results_list = get_fixture_response
+            fixture_results = process_fixture_results(fixtures_results_list)
+
+
+    return fixture_results
+
+
+def process_fixture_results(fixture_list):
+
+    fixture_results = []
+    for fixture_item in fixture_list:
+        venue= fixture_item.get('venue')
+        status = fixture_item.get('status')
+        localteam_name=fixture_item.get('localteam_name')
+        localteam_score=fixture_item.get('localteam_score')
+        visitorteam_name=fixture_item.get('visitorteam_name')
+        visitorteam_score=fixture_item.get('visitorteam_score')
+        time=fixture_item.get('time')
+        fixture_object = FixtureList(venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time)
+        fixture_results.append(fixture_object)
+    return fixture_results

@@ -1,33 +1,99 @@
-<!-- {%extends 'base.html'%}
+{% extends 'base.html'%}
 
 
 {% block content%}
-<div>
-  <!- <table class="table" >
-  <tr >
-    <th>Pos</th>
-    <th>team</th>
-    <th>played</th>
-    <th>wins</th>
-    <th>draws</th>
-    <th>losses</th>
-    <th>GD</th>
-    <th>points</th>
-  </tr>
-  {%for match in matches%}
-  <tr>
-    <td>{{match.position}}</td>
-    <td>{{match.matches}}</td>
-    <td>{{match.team_name}}</td>
-    <td>{{match.wins}}</td>
-    <td>{{match.draws}}</td>
-    <td>{{match.losses}}</td>
-    <td>{{match.goaldifference}}</td>
-    <td>{{match.points}}</td>
-  </tr>
-  {%endfor%}
-</table> -->
-<!-- </div>
+<div style="background-color: black; background-attachment: fixed; height: 100%; padding-top: 110px;" class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+                <div class="card" style=" background-color: rgba(0, 0, 0, 0.452); width:330px">
+                    <h4 class="card-title"> </h4>
+                    <img class="card-img-top" src="https://pbs.twimg.com/media/DKGFX2xWAAAFpdO.png" alt="Card image" style="width:200px; height: 200px;"><br>
+                    <img class="card-img-top" src="https://1.bp.blogspot.com/-urMdWMEeKTs/WopfdHGl2WI/AAAAAAAADh8/EIteBuxvDog6BFUrKWXo54-YzTx9TLLsACLcBGAs/s640/real-madrid-logo-png-24656.png" alt="Card image" style="width:200px; height: 200px;"><br>
+                    
+                    <div class="card-body">
+                    
+                    <p class="card-text"></p>
+                    
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-9">
+            <div id="demo" class="carousel slide" data-ride="carousel">
 
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                </ul>
+                
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.edigitalagency.com.au/wp-content/uploads/best-neymar-jr-hd-wallpaper-image-photo.jpg" alt="Los Angeles" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Neymar Jr.</h3>
+                            <p>"Find the newest news on football games"</p>
+                        </div>
+                    </div>
 
-{%endblock%} --> 
+                    <div class="carousel-item">
+                        <img src="https://wallpapersite.com/images/wallpapers/philippe-coutinho-2560x1440-brazilian-footballer-hd-5k-3608.jpg" alt="Chicago" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Philippe Coutinho</h3>
+                            <p>"football is always so much fun!"</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://fifafootballworldcup.live/wp-content/uploads/2018/03/Lionel-Messi-high-definition-pictures-in-Argentina-team-jersey.jpg" alt="Chicago" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Lionel Messi</h3>
+                            <p>"football is always so much fun!"</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://lh6.googleusercontent.com/proxy/6Cs9Fgj-SX4r5g-gJFOqCQA8zK0GaBGw902Kh9m3mpxAdd0cG3gzRs8Wkuud152iIR5ZISHjxqPxymElJZ7LlVW1RR0cHqeAbLZdet1nT1w9tIET=s0-d" alt="Chicago" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Get News</h3>
+                            <p>"football is always so much fun!"</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://90l.tribuna.com/images/9e/89/1e/9e891eccd579406d95db68ef59f958bb.jpg" alt="Chicago" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Romelu Lukaku</h3>
+                            <p>"football is always so much fun!"</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://wallpapersite.com/images/wallpapers/cristiano-ronaldo-2560x1440-fifa-18-4k-7777.jpg" alt="New York" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3 style="font-family: 'Kaushan Script', cursive; color: gold; font-size: 25px;">Cristiano Ronaldo</h3>
+                            <p>"football is always so much fun!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                </div>
+
+        </div>
+        
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+{% endblock%}
