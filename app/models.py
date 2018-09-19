@@ -28,3 +28,18 @@ class User(UserMixin,db.Model):
         return check_password_hash(self.pass_secure,password)
     def __repr__(self):
         return f'User {self.username}'
+
+class EplStandings:
+    '''
+    articles class to define the article Objects
+    '''
+    def __init__(self,position,matches,team_name,wins,draws,losses,goaldifference,points):
+        # self.id=id
+        self.position=position
+        self.matches=matches
+        self.team_name=team_name
+        self.wins=wins
+        self.draws=draws
+        self.losses=losses
+        self.goaldifference=goaldifference
+        self.points=points

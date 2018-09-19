@@ -1,9 +1,9 @@
-<!-- {%extends 'base.html'%}
+{%extends 'base.html'%}
 
 
 {% block content%}
 <div>
-  <!- <table class="table" >
+  <table class="table" >
   <tr >
     <th>Pos</th>
     <th>team</th>
@@ -26,8 +26,12 @@
     <td>{{match.points}}</td>
   </tr>
   {%endfor%}
-</table> -->
-<!-- </div>
+</table>
+</div>
+<style>
+.table{
+  width:100%;
+}
+</style>
 
-
-{%endblock%} --> 
+{%endblock%}
