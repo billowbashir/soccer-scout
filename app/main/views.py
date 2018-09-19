@@ -8,5 +8,9 @@ from ..request import get_competitions
 
 @main.route('/')
 def index():
+
+    return render_template('index.html')
+@main.route('/standings',methods=['GET','POST'])
+def standings():
     matches=get_competitions()
-    return render_template('index.html',matches=matches)
+    return render_template('standings.html',matches=matches)
