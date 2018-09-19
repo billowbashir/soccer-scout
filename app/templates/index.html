@@ -3,17 +3,35 @@
 
 {% block content%}
 <div>
-  <h1 class="welcome">Welcome to soccer scout for all your soccer stats</h1>
+  <table class="table" >
+  <tr >
+    <th>Pos</th>
+    <th>team</th>
+    <th>played</th>
+    <th>wins</th>
+    <th>draws</th>
+    <th>losses</th>
+    <th>GD</th>
+    <th>points</th>
+  </tr>
   {%for match in matches%}
-
-  <p>{{match.matches}}</p>
-
+  <tr>
+    <td>{{match.position}}</td>
+    <td>{{match.matches}}</td>
+    <td>{{match.team_name}}</td>
+    <td>{{match.wins}}</td>
+    <td>{{match.draws}}</td>
+    <td>{{match.losses}}</td>
+    <td>{{match.goaldifference}}</td>
+    <td>{{match.points}}</td>
+  </tr>
   {%endfor%}
+</table>
 </div>
 <style>
-.welcome{
-  color: bisque;
-  text-align: center;
+.table{
+  width:20%;
 }
 </style>
+
 {%endblock%}
