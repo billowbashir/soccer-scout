@@ -2,35 +2,83 @@
 
 
 {% block content%}
-<body style=" padding-top: 170px;" class="body">
-<div>
-  {%for fixture in fixtures%}
+<body style="background-image: url(http://cdn.wallpapersafari.com/85/54/pqzC9U.jpg); padding-top: 120px;" >
+<div style="background-image: url(http://cdn.wallpapersafari.com/85/54/pqzC9U.jpg);" class="container">
+      {% for fixture in fixtures%}
 
-  <div class="jumbotron">
-    <h4>Venue: {{fixture.venue}}</h4>
-    <p>{{fixture.localteam_name}} VS {{fixture.visitorteam_name}}</p>
-    {%if fixture.status==""%}
-    <p>Time: {{fixture.time}}</p>
+          <div class="container card">
+            
+            {% if fixture.status==""%}
+            <div style="text-align: center;" class="card-title">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>{{fixture.localteam_name}}  </h4>
+                <h4> {{fixture.localteam_score}} _</h4>
+              </div>
+              <div class="col-md-4">
+                <h4>VS</h4>
+                <small class="badge badge-dark">{{fixture.formatted_date}}</small>
+                
+              </div>
+              <div class="col-md-4">
+                <h4>{{fixture.visitorteam_name}} </h4>
+                <h4>{{fixture.visitorteam_score}} _</h4>
+              </div>
+            </div>
+          </div>
 
-  {%else%}
-    <p>Score:{{fixture.localteam_score}}:{{fixture.visitorteam_score}} Status:{{fixture.status}}</p>
+            <hr>
+            <small>Venue: <a href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <p>Time: {{ fixture.time }}</p>
+            <p >Status:{{fixture.status}} Match not played</p>
 
-  {%endif%}
-  </div>
-  {%endfor%}
+            </div>
+          {% else%}
+          <div style="text-align: center;" class="card-title">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>{{fixture.localteam_name}}  </h4>
+                <h4> {{fixture.localteam_score}}</h4>
+              </div>
+              <div class="col-md-4">
+                <h4>VS</h4>
+                <small class="badge badge-dark">{{fixture.formatted_date}}</small>
+                
+              </div>
+              <div class="col-md-4">
+                <h4>{{fixture.visitorteam_name}} </h4>
+                <h4>{{fixture.visitorteam_score}}</h4>
+              </div>
+            </div>
+          </div>
+
+            <hr>
+            <small>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <p>Time: {{ fixture.time }}</p>
+            <p>Status:{{fixture.status}}</p>
+          
+          {% endif%}
+          
+          </div>
+          <br>
+          <br>
+      {% endfor%}
 </div>
 </body>
 <style>
-.jumbotron{
+.panel{
   text-align: center;
   color:red;
   font-size: 20px;
   background-color:transparent;
   /* border-bottom-style: solid; */
   border-top-style: solid;
-  border-color: red;
+  border-color: black;
 
 
+}
+.card{
+  background-color: lightgrey;
 }
 .body{
   background-attachment: fixed;
