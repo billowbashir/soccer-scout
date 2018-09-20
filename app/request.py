@@ -37,8 +37,10 @@ def process_results(table_list):
         losses=table_item.get('overall_l')
         goaldifference=table_item.get('gd')
         points=table_item.get('points')
+
         standing_object = EplStandings(position,team_name,matches,wins,draws,losses,goaldifference,points)
         standing_results.append(standing_object)
+
     return standing_results
 
     # request for fixture
