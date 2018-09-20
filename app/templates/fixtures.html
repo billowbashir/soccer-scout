@@ -28,9 +28,10 @@
           </div>
 
             <hr>
-            <small>Venue: <a href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <small>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
             <p>Time: {{ fixture.time }}</p>
             <p >Status:{{fixture.status}} Match not played</p>
+            
 
             </div>
           {% else%}
@@ -38,7 +39,7 @@
             <div class="row">
               <div class="col-md-4">
                 <h4>{{fixture.localteam_name}}  </h4>
-                <h4> {{fixture.localteam_score}}</h4>
+                <h4> <img src="https://pbs.twimg.com/profile_images/1829447748/globey-football.png" height="30px">  {{fixture.localteam_score}}</h4>
               </div>
               <div class="col-md-4">
                 <h4>VS</h4>
@@ -47,7 +48,7 @@
               </div>
               <div class="col-md-4">
                 <h4>{{fixture.visitorteam_name}} </h4>
-                <h4>{{fixture.visitorteam_score}}</h4>
+                <h4> <img src="https://pbs.twimg.com/profile_images/1829447748/globey-football.png" height="30px">  {{fixture.visitorteam_score}}</h4>
               </div>
             </div>
           </div>
@@ -56,7 +57,8 @@
             <small>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
             <p>Time: {{ fixture.time }}</p>
             <p>Status:{{fixture.status}}</p>
-          
+            
+            
           {% endif%}
           
           </div>
@@ -74,15 +76,10 @@
   /* border-bottom-style: solid; */
   border-top-style: solid;
   border-color: black;
-
-
 }
 .card{
   background-color: lightgrey;
 }
-.body{
-  background-attachment: fixed;
-  background-image:url('http://getwallpapers.com/wallpaper/full/b/c/1/762330-top-premier-league-wallpapers-2560x1440-windows-7.jpg');
-}
+
 </style>
 {%endblock%}

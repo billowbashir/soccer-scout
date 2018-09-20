@@ -13,6 +13,7 @@ def index():
     return render_template('index.html')
 
 @main.route('/epl')
+@login_required 
 def epl():
 
     return render_template('epl.html')
