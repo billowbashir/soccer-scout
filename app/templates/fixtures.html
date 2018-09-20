@@ -18,7 +18,7 @@
               <div class="col-md-4">
                 <h4>VS</h4>
                 <small class="badge badge-dark">{{fixture.formatted_date}}</small>
-                <small>{{ fixture.events.id }}</small>
+                
               </div>
               <div class="col-md-4">
                 <h4>{{fixture.visitorteam_name}} </h4>
@@ -28,9 +28,9 @@
           </div>
 
             <hr>
-            <small>Venue: {{fixture.venue}}</small>
-            
-            <p>Status:{{fixture.status}}</p>
+            <small>Venue: <a href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <p>Time: {{ fixture.time }}</p>
+            <p >Status:{{fixture.status}} Match not played</p>
 
             </div>
           {% else%}
@@ -43,7 +43,7 @@
               <div class="col-md-4">
                 <h4>VS</h4>
                 <small class="badge badge-dark">{{fixture.formatted_date}}</small>
-                <small>{{ fixture.events.id }}</small>
+                
               </div>
               <div class="col-md-4">
                 <h4>{{fixture.visitorteam_name}} </h4>
@@ -53,8 +53,8 @@
           </div>
 
             <hr>
-            <small>Venue: {{fixture.venue}}</small>
-            
+            <small>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <p>Time: {{ fixture.time }}</p>
             <p>Status:{{fixture.status}}</p>
           
           {% endif%}
