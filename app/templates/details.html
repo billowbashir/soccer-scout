@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% block content%}
+<div style=" padding-top: 170px;">
+ {%for detail in details%}
+ <div class="col-md-6">
+ <ul>
+   <h2>Home Team</h2>
+   <h3>starting lineup</h3>
+ <p>{{detail.lineup.localteam.name}}</p>
+   {% for localteam in detail.lineup.localteam%}
+     <li>{{ localteam.name}}</li>
+   {% endfor%}
+   </ul>
+   <ul>
+     <h3>subs</h3>
+   <p>{{detail.subs.localteam.name}}</p>
+     {% for localteam in detail.subs.localteam%}
+       <li>{{ localteam.name}}</li>
+     {% endfor%}
+     </ul>
+     </div>
+     <div class="col-md-6">
+             <ul>
+               <h2>Away Team</h2>
+               <h3>starting lineup</h3>
+             <p>{{detail.lineup.visitorteam.name}}</p>
+             {% for localteam in detail.lineup.visitorteam%}
+               <li>{{ localteam.name}}  {{ localteam.pos}}</li>
+             {% endfor%}
+               </ul>
+             <ul>
+               <h3>subs</h3>
+             <p>{{detail.subs.visitorteam.name}}</p>
+           {% for visitorteam in detail.subs.visitorteam%}
+             <li>{{ visitorteam.name}}</li>
+           {% endfor%}
+               </ul>
+       </div>
+         </div>
+         <div class="row">
+           <h2 style=" text-align:center;">Match Statistics</h2>
+         </div>
+ {%endfor%}
+</div>
+{%endblock%}
