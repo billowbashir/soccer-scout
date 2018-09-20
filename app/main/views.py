@@ -63,10 +63,15 @@ def standings():
     matches=get_competitions()
     return render_template('standings.html',matches=matches)
 
+
+
 @main.route('/fixtures',methods=['GET','POST'])
 def fixtures():
     fixtures=get_fixtures()
     return render_template('fixtures.html',fixtures=fixtures)
+
+
+
 @main.route('/details/<int:id>',methods=['GET','POST'])
 def details(id):
     fixtures=get_fixtures()
