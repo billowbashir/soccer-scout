@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block content %}
+<div style=" padding-top: 170px; padding-bottom: 400px;" class="container">
+    <div class="row">
+        <div class="col-md-6">
+                <div class="card" style="width:360px">
+                    <img class="card-img-top" src="https://at-cdn-s02.audiotool.com/2017/11/03/documents/exqynv8e0js/0/cover256x256-378c1087f05745aba58a24bcc4a45811.jpg" alt="Card image" style="width:356px">
+                    <div class="card-body">
+                    <h4 class="card-title">Bashir</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                        See more
+                    </button>
+
+                    <!--Models-->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Bashir</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Bashir</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-6">
+                <div class="card" style="width:360px">
+                    <img class="card-img-top" src="https://vignette.wikia.nocookie.net/gwent/images/8/87/Vesemir_Avatar.png/revision/latest?cb=20171102235450" alt="Card image" style="width:356px">
+                    <div class="card-body">
+                    <h4 class="card-title">Lewis</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2">
+                        See more
+                    </button>
+                    <div style="background-image: url(http://www.fullhdwpp.com/wp-content/uploads/Colored-Splash.jpg);" class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle2" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 style="font-family: 'Kaushan Script', cursive; color: black; font-size: 25px;" class="modal-title" id="exampleModalLongTitle">Lewis Mutuma</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Lewis</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
