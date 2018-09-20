@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 from .. import db , photos
 from ..models import User
 from .forms import UpdateProfile
-from ..request import get_competitions,get_fixtures
+from ..request import get_competitions,get_fixtures,get_details
 
 @main.route('/')
 def index():
@@ -36,7 +36,7 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
-    
+
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
 def update_pic(uname):
@@ -62,3 +62,8 @@ def standings():
 def fixtures():
     fixtures=get_fixtures()
     return render_template('fixtures.html',fixtures=fixtures)
+@main.route('/details/<int:id>',methods=['GET','POST'])
+def details(id):
+    fixtures=get_fixtures()
+    details=get_details(id)
+    return render_template('details.html',details=details, fixtures=fixtures)
