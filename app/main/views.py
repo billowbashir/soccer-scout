@@ -74,6 +74,12 @@ def fixtures():
 
 @main.route('/details/<int:id>',methods=['GET','POST'])
 def details(id):
-    fixtures=get_fixtures()
+
     details=get_details(id)
-    return render_template('details.html',details=details, fixtures=fixtures)
+    return render_template('details.html',details=details)
+
+
+@main.route('/commentary/<int:id>',methods=['GET','POST'])
+def commentary(id):
+    details=get_details(id)
+    return render_template('commentary.html',details=details)

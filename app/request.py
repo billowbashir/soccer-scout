@@ -10,6 +10,7 @@ baseurl='http://api.football-api.com/2.0/standings/1204?Authorization={}'
 
 fixture_baseurl='http://api.football-api.com/2.0/matches?comp_id=1204&from_date=15.9.2018&to_date=24.9.2018&Authorization={}'
 details_url='http://api.football-api.com/2.0/commentaries/{}?Authorization={}'
+team_url='http://api.football-api.com/2.0/team/{}?Authorization={}'
 # request for standings
 def get_competitions():
     get_standings_url = baseurl.format(apikey)

@@ -12,7 +12,7 @@
             <div style="text-align: center;" class="card-title">
             <div class="row">
               <div class="col-md-4">
-                <h4>{{fixture.localteam_name}}  </h4>
+                <h4><a href="https://en.m.wikipedia.org/wiki/{{fixture.localteam_name}}">{{fixture.localteam_name}}</a></h4>
                 <h4> {{fixture.localteam_score}} _</h4>
               </div>
               <div class="col-md-4">
@@ -21,42 +21,44 @@
 
               </div>
               <div class="col-md-4">
-                <h4>{{fixture.visitorteam_name}} </h4>
+                <h4><a href="https://en.m.wikipedia.org/wiki/{{fixture.visitorteam_name}}">{{fixture.visitorteam_name}}</a></h4>
                 <h4>{{fixture.visitorteam_score}} _</h4>
               </div>
             </div>
           </div>
 
             <hr>
-            <small>Venue: <a href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <h6>Venue: <a href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></h6>
             <p>Time: {{ fixture.time }}</p>
-            <p >Status:{{fixture.status}} Match not played</p>
-            <p><a href="/details/{{fixture.id}}">details</a></p>
+            <p style="text-align:center;">Status:{{fixture.status}} Match not played</p>
+
             </div>
           {% else%}
           <div style="text-align: center;" class="card-title">
             <div class="row">
               <div class="col-md-4">
-                <h4>{{fixture.localteam_name}}  </h4>
+                <h4><a href="https://en.m.wikipedia.org/wiki/{{fixture.localteam_name}}">{{fixture.localteam_name}}</a></h4>
                 <h4> {{fixture.localteam_score}}</h4>
               </div>
               <div class="col-md-4">
                 <h4>VS</h4>
-                <small class="badge badge-dark">{{fixture.formatted_date}}</small>
+                <h6 class="badge badge-dark">{{fixture.formatted_date}}</h6>
 
               </div>
               <div class="col-md-4">
-                <h4>{{fixture.visitorteam_name}} </h4>
+                <h4><a href="https://en.m.wikipedia.org/wiki/{{fixture.visitorteam_name}}">{{fixture.visitorteam_name}}</a></h4>
                 <h4>{{fixture.visitorteam_score}}</h4>
               </div>
             </div>
           </div>
 
             <hr>
-            <small>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></small>
+            <h6>Venue: <a style="color: purple;" href="http://maps.google.com/?q={{ fixture.venue }}">{{fixture.venue}}</a></h6>
             <p>Time: {{ fixture.time }}</p>
             <p>Status:{{fixture.status}}</p>
-            <p><a href="/details/{{fixture.id}}">details</a></p>
+            <div style="text-align:center;"><a  href="/details/{{fixture.id}}">Details</a></div>
+            <div style="text-align:center;"><a href="/commentary/{{fixture.id}}">Commentary</a></div>
+
           {% endif%}
 
           </div>

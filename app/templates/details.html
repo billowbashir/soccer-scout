@@ -1,45 +1,88 @@
-{%extends 'base.html'%}
-{% block content%}
-<div style=" padding-top: 170px;">
- {%for detail in details%}
- <div class="col-md-6">
- <ul>
-   <h2>Home Team</h2>
-   <h3>starting lineup</h3>
- <p>{{detail.lineup.localteam.name}}</p>
-   {% for localteam in detail.lineup.localteam%}
-     <li>{{ localteam.name}}</li>
-   {% endfor%}
-   </ul>
-   <ul>
-     <h3>subs</h3>
-   <p>{{detail.subs.localteam.name}}</p>
-     {% for localteam in detail.subs.localteam%}
-       <li>{{ localteam.name}}</li>
-     {% endfor%}
-     </ul>
-     </div>
-     <div class="col-md-6">
-             <ul>
-               <h2>Away Team</h2>
-               <h3>starting lineup</h3>
-             <p>{{detail.lineup.visitorteam.name}}</p>
-             {% for localteam in detail.lineup.visitorteam%}
-               <li>{{ localteam.name}}  {{ localteam.pos}}</li>
-             {% endfor%}
-               </ul>
-             <ul>
-               <h3>subs</h3>
-             <p>{{detail.subs.visitorteam.name}}</p>
-           {% for visitorteam in detail.subs.visitorteam%}
-             <li>{{ visitorteam.name}}</li>
-           {% endfor%}
-               </ul>
-       </div>
-         </div>
-         <div class="row">
-           <h2 style=" text-align:center;">Match Statistics</h2>
-         </div>
- {%endfor%}
+{%extends 'base.html'%} {% block content%}
+<div class="row" style=" padding-top: 170px;">
+  {%for detail in details%}
+  <div class="col-md-6">
+    <ul>
+      <h2>Home Team</h2>
+      <h3>starting lineup</h3>
+      <!-- <p>{{detail.lineup.localteam.name}}</p> -->
+      {% for localteam in detail.lineup.localteam%}
+      <li><a href="https://en.m.wikipedia.org/wiki/{{ localteam.name}}">{{ localteam.name}}({{ localteam.number}})</a></li>
+      {% endfor%}
+    </ul>
+    <ul>
+      <h3>subs</h3>
+      <!-- <p>{{detail.subs.localteam.name}}</p> -->
+      {% for localteam in detail.subs.localteam%}
+      <li><a href="https://en.m.wikipedia.org/wiki/{{ localteam.name}}">{{ localteam.name}}({{ localteam.number}})</a></li>
+      {% endfor%}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul>
+      <h2>Away Team</h2>
+      <h3>starting lineup</h3>
+      {% for visitorteam in detail.lineup.visitorteam%}
+      <li><a href="https://en.m.wikipedia.org/wiki/{{ visitorteam.name}}">{{ visitorteam.name}} ({{ visitorteam.number}})</a></li>
+      {% endfor%}
+    </ul>
+    <ul>
+      <h3>subs</h3>
+
+      {% for visitorteam in detail.subs.visitorteam%}
+      <li><a href="https://en.m.wikipedia.org/wiki/{{ visitorteam.name}}">{{ visitorteam.name}}({{ visitorteam.name}})</a></li>
+      {% endfor%}
+    </ul>
+  </div>
 </div>
-{%endblock%}
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h2 style=" text-align:center;"><strong>Match Statistics</strong></h2>
+    <div class="col-md-3">
+      <br>
+      <br>
+      <p><strong>Total shots</strong></p>
+      <p><strong>Shots on target</strong></p>
+      <p><strong>Fouls</strong></p>
+      <p><strong>Corners</strong></p>
+      <p><strong>Offsides</strong></p>
+      <p><strong>Possession</strong></p>
+      <p><strong>Yellow card</strong></p>
+      <p><strong>Red cards</strong></p>
+      <p><strong>Saves</strong></p>
+    </div>
+    <div class="col-md-4">
+      <h2>Home Team</h2>
+
+        {%for localteam in detail.stats.localteam %}
+        <p>{{localteam.shots_total}}</p>
+         <p>{{localteam.shots_ongoal}}</p>
+         <p>{{localteam.fouls}}</p>
+         <p>{{localteam.corners}}</p>
+         <p>{{localteam.offsides}}</p>
+         <p>{{localteam.possesiontime}}</p>
+         <p>{{localteam.yellowcards}}</p>
+         <p>{{localteam.redcards}}</p>
+          <p>{{localteam.saves}}</p>
+        {%endfor%}
+
+    </div>
+    <div class="col-md-4">
+      <h2>Away Team</h2>
+      {%for visitorteam in detail.stats.visitorteam %}
+      <p>{{visitorteam.shots_total}}</p>
+       <p>{{visitorteam.shots_ongoal}}</p>
+       <p>{{visitorteam.fouls}}</p>
+       <p>{{visitorteam.corners}}</p>
+       <p>{{visitorteam.offsides}}</p>
+       <p>{{visitorteam.possesiontime}}</p>
+       <p>{{visitorteam.yellowcards}}</p>
+       <p>{{visitorteam.redcards}}</p>
+        <p>{{visitorteam.saves}}</p>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+
+{%endfor%} {%endblock%}

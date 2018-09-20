@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{% block content%}
+<div>
+  {%for detail in details%}
+  {%for commentary in detail.comments%}
+  <p style="text-align:justify;">(min:{{commentary.minute}})-{{commentary.comment}}</p>
+
+  {%endfor%}
+  {%endfor%}
+</div>
+{%endblock%}
