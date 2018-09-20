@@ -49,17 +49,18 @@ class FixtureList:
     '''
     EplStandings class to define the EplStandings Object
     '''
-    def __init__(self,id,venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time):
-          self.id=id
-          self.venue=venue
-          self.status=status
-          self.localteam_name=localteam_name
-          self.localteam_score=localteam_score
-          self.visitorteam_name=visitorteam_name
-          self.visitorteam_score=visitorteam_score
-          self.time=time
+    def __init__(self, venue, status, localteam_name, localteam_score, visitorteam_name, visitorteam_score, time, formatted_date, events):
+        self.venue=venue
+        self.status=status
+        self.localteam_name=localteam_name
+        self.localteam_score=localteam_score
+        self.visitorteam_name=visitorteam_name
+        self.visitorteam_score=visitorteam_score
+        self.time=time
+        self.formatted_date = formatted_date
+        self.events = events
 
-<<<<<<< HEAD
+
 
 
 
@@ -74,15 +75,3 @@ class MatchDetails:
         self.subs=subs
         self.comments=comments
         self.stats=stats
-=======
-    def __init__(self, venue, status, localteam_name, localteam_score, visitorteam_name, visitorteam_score, time, formatted_date, events):
-        self.venue=venue
-        self.status=status
-        self.localteam_name=localteam_name
-        self.localteam_score=localteam_score
-        self.visitorteam_name=visitorteam_name
-        self.visitorteam_score=visitorteam_score
-        self.time=time
-        self.formatted_date = formatted_date
-        self.events = events
->>>>>>> lewis
