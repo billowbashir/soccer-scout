@@ -59,6 +59,7 @@ class FixtureList:
           self.visitorteam_score=visitorteam_score
           self.time=time
 
+<<<<<<< HEAD
 
 
 
@@ -73,3 +74,15 @@ class MatchDetails:
         self.subs=subs
         self.comments=comments
         self.stats=stats
+=======
+    def __init__(self, venue, status, localteam_name, localteam_score, visitorteam_name, visitorteam_score, time, formatted_date, events):
+        self.venue=venue
+        self.status=status
+        self.localteam_name=localteam_name
+        self.localteam_score=localteam_score
+        self.visitorteam_name=visitorteam_name
+        self.visitorteam_score=visitorteam_score
+        self.time=time
+        self.formatted_date = formatted_date
+        self.events = events
+>>>>>>> lewis

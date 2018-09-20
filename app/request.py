@@ -4,6 +4,7 @@ from flask import request
 
 from .models import EplStandings,FixtureList,MatchDetails
 
+
 apikey='565ec012251f932ea4000001fa542ae9d994470e73fdb314a8a56d76'
 baseurl='http://api.football-api.com/2.0/standings/1204?Authorization={}'
 
@@ -69,6 +70,7 @@ def process_fixture_results(fixture_list):
         visitorteam_name=fixture_item.get('visitorteam_name')
         visitorteam_score=fixture_item.get('visitorteam_score')
         time=fixture_item.get('time')
+<<<<<<< HEAD
         fixture_object = FixtureList(id,venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time)
         fixture_results.append(fixture_object)
     return fixture_results
@@ -104,3 +106,12 @@ def process_details_results(detail_list):
 
 
     return  detail_results
+=======
+        formatted_date = fixture_item.get('formatted_date')
+        events = fixture_item.get('events')
+
+        fixture_object = FixtureList(venue,status,localteam_name,localteam_score,visitorteam_name,visitorteam_score,time,formatted_date,events)
+        fixture_results.append(fixture_object)
+    return fixture_results
+
+>>>>>>> lewis

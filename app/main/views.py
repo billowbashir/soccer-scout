@@ -12,6 +12,11 @@ def index():
 
     return render_template('index.html')
 
+@main.route('/epl')
+def epl():
+
+    return render_template('epl.html')
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
